@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 정보</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto bg-white/90 backdrop-blur-lg rounded-2xl shadow-2xl overflow-hidden">
+            <div class="p-8">
+                <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">날씨 정보</h1>
+                
+                <div class="flex gap-2 mb-8">
+                    <input type="text" 
+                           id="city-input" 
+                           placeholder="도시 이름을 입력하세요" 
+                           class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all">
+                    <button id="search-btn" 
+                            class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all">
+                        검색
+                    </button>
+                </div>
+
+                <div class="weather-info">
+                    <div class="weather-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+                        <h2 id="city-name" class="text-2xl font-bold text-gray-800 mb-4">도시</h2>
+                        <div class="weather-details">
+                            <img id="weather-icon" src="" alt="날씨 아이콘" class="w-24 h-24 mx-auto mb-4">
+                            <p id="temperature" class="text-5xl font-bold text-gray-800 mb-2">--°C</p>
+                            <p id="weather-description" class="text-xl text-gray-600 mb-6">날씨 설명</p>
+                            
+                            <div class="grid grid-cols-2 gap-4 mt-6 pt-6 border-t border-gray-200">
+                                <div class="text-center">
+                                    <p class="text-sm text-gray-500 mb-1">습도</p>
+                                    <p class="text-xl font-semibold text-gray-700">
+                                        <span id="humidity">--%</span>
+                                    </p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-sm text-gray-500 mb-1">풍속</p>
+                                    <p class="text-xl font-semibold text-gray-700">
+                                        <span id="wind-speed">-- km/h</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
